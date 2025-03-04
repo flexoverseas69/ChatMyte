@@ -113,7 +113,7 @@ button.onclick = e => {
 
 // on get message
 socket.on('get-message', (input, type) => {
-  let msghtml = `<div class="msg"><b>Stranger: </b> <span id='msg'>${input}</span></div>`;
+  let msghtml = `<div class="msg" style="color:gold;" ><b>Stranger: </b> <span id='msg'>${input}</span></div>`;
   document.querySelector('.chat-holder .wrapper').innerHTML += msghtml;
 });
 

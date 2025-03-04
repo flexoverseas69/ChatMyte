@@ -1,12 +1,19 @@
 import express from 'express';
-const app = express();
 import cors from 'cors';
-app.use(cors());
 import { Server } from 'socket.io';
-const server = app.listen('8000', () => console.log('Server is up, 8000'));
-const io = new Server(server, { cors: { origin: '*' } });
 import { handelStart, handelDisconnect, getType } from './lib';
 import { GetTypesResult, room } from './types';
+
+const app = express();
+app.use(cors());
+
+// Define the root route for GET requests
+app.get("/", (req, res) => {
+  res.send("Server is up and running! 🚀");
+});
+
+const server = app.listen('8000', () => console.log('Server is up, 8000'));
+const io = new Server(server, { cors: { origin: '*' } });
 
 let online: number = 0;
 let roomArr: Array<room> = [];
@@ -31,8 +38,7 @@ io.on('connection', (socket) => {
         if (type?.p2id) {
           io.to(type.p2id).emit('stranger-left');
         }
-      }
-      else if (type?.type == 'p2') {
+      } else if (type?.type == 'p2') {
         if (type?.p1id) {
           io.to(type.p1id).emit('stranger-left');
         }
