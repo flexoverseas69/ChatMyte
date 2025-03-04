@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "vite build", 
-    "preview": "vite preview", 
+    "dev": "vite", 
+    "build": "vite build",
+    "preview": "vite preview",  
     "start": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "vite --host --port 3000", 
+    "dev:client": "vite --host --port 3000",  
     "dev:server": "cd ../server && npm start"  
   },
   "dependencies": {
