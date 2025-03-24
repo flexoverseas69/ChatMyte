@@ -7,7 +7,7 @@
     "esModuleInterop": true,          
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "types": ["node", "express", "cors", "socket.io", "uuid"],
+   
     "skipLibCheck": true
   },
   "include": ["src/**/*", "index.ts"],
