@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {Request, Response} from 'express';
 import cors from 'cors';
 
 import { Server } from 'socket.io';
@@ -9,11 +9,12 @@ const app = express();
 app.use(cors());
 
 // Define the root route for GET requests
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Server is up and running! 🚀");
 });
 
-const server = app.listen('8000', () => console.log('Server is up, 8000'));
+const PORT = process.env.PORT || 8000;
+const server = app.listen(PORT, () => console.log(`Server is up on port ${PORT}`));
 const io = new Server(server, { cors: { origin: '*' } });
 
 let online: number = 0;
