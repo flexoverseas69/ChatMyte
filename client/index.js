@@ -33,7 +33,7 @@ function start() {
 }
 
 // connect ot server
-const socket = io('http://localhost:8000');
+const socket = io('chatmyteserve.onrender.com');
 
 // disconnecting event
 socket.on('disconnected', () => {
