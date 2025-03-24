@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
   io.emit('online', online);
 
   // on start
-  socket.on('start', cb => {
+  socket.on('start',  (cb: Function)  => {
     handelStart(roomArr, socket, cb, io);
   });
 

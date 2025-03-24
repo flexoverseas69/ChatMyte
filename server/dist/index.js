@@ -15,14 +15,14 @@ app.get("/", (req, res) => {
 });
 const PORT = process.env.PORT || 8000;
 const server = app.listen(PORT, () => console.log(`Server is up on port ${PORT}`));
-const io = new socket_io_1.Server(server, { cors: { origin: 'chatmyteserve.onrender.com' } });
+const io = new socket_io_1.Server(server, { cors: { origin: '*' } });
 let online = 0;
 let roomArr = [];
 io.on('connection', (socket) => {
     online++;
     io.emit('online', online);
     // on start
-    socket.on('start', cb => {
+    socket.on('start', (cb) => {
         (0, lib_1.handelStart)(roomArr, socket, cb, io);
     });
     // On disconnection
