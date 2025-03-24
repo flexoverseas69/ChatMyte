@@ -1,7 +1,0 @@
-[build]
-  base = "client"
-  publish = "client/build"  
-  command = "npm run build"  
-
-[[functions]]
-  directory = "server/dist" 

@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite", 
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",  
+    "preview": "vite preview",
     "start": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
-    "dev:client": "vite --host --port 3000",  
-    "dev:server": "cd ../server && npm start"  
+    "dev:client": "vite --host --port 3000",
+    "dev:server": "cd ../server && npm start"
   },
   "dependencies": {
     "concurrently": "^9.1.2",
-    "socket.io-client": "^4.7.2",
+    "socket.io-client": "^4.8.1",
     "vite": "^4.5.9"
   }
 }
